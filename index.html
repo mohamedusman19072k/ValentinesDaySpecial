@@ -3,30 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>For My Love ❤️</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Mrs+Saint+Delafield&display=swap" rel="stylesheet">
+    <title>For SaiDhuMa ❤️ From UsMan</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Great+Vibes&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --rose: #ff6b9d;
             --deep-rose: #c9184a;
             --blush: #ffafcc;
-            --cream: #fff0f3;
-            --burgundy: #800f2f;
+            --cream: #fff5f7;
+            --burgundy: #6b0f1a;
             --gold: #ffd700;
+            --white: #ffffff;
+            --soft-pink: #ffe5ec;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
         }
 
         body {
-            font-family: 'Cormorant Garamond', serif;
-            background: linear-gradient(135deg, var(--cream) 0%, #ffe5ec 100%);
+            font-family: 'Crimson Text', serif;
+            background: linear-gradient(135deg, var(--cream) 0%, var(--soft-pink) 50%, #ffd4e5 100%);
             color: var(--burgundy);
             overflow-x: hidden;
             min-height: 100vh;
+            position: relative;
         }
 
         /* Screen management */
@@ -40,7 +44,7 @@
         }
 
         .screen.fade-out {
-            animation: fadeOutScreen 0.8s ease-out forwards;
+            animation: fadeOutScreen 1s ease-out forwards;
         }
 
         @keyframes fadeOutScreen {
@@ -50,191 +54,22 @@
             }
             to {
                 opacity: 0;
-                transform: scale(0.95);
+                transform: scale(0.98);
             }
         }
 
         .screen.fade-in {
-            animation: fadeInScreen 0.8s ease-out forwards;
+            animation: fadeInScreen 1s ease-out forwards;
         }
 
         @keyframes fadeInScreen {
             from {
                 opacity: 0;
-                transform: scale(1.05);
+                transform: scale(1.02);
             }
             to {
                 opacity: 1;
                 transform: scale(1);
-            }
-        }
-
-        /* Quiz Screen Styles */
-        .quiz-screen {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 40px 20px;
-        }
-
-        .quiz-container {
-            /* max-width: 700px; */
-            width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 30px;
-            padding: 50px 40px;
-            box-shadow: 0 20px 60px rgba(201, 24, 74, 0.2);
-            animation: fadeInScale 0.8s ease-out;
-        }
-
-        @keyframes fadeInScale {
-            from {
-                opacity: 0;
-                transform: scale(0.9);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-
-        .quiz-header {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .quiz-header h1 {
-            font-family: 'Mrs Saint Delafield', cursive;
-            font-size: clamp(2.5rem, 6vw, 4rem);
-            color: var(--deep-rose);
-            margin-bottom: 15px;
-        }
-
-        .quiz-header p {
-            font-size: 1.2rem;
-            color: var(--burgundy);
-            font-style: italic;
-        }
-
-        .question-block {
-            margin-bottom: 35px;
-            padding: 25px;
-            background: rgba(255, 240, 243, 0.5);
-            border-radius: 15px;
-            border: 2px solid transparent;
-            transition: all 0.3s ease;
-        }
-
-        .question-block.answered {
-            border-color: var(--rose);
-            background: rgba(255, 175, 204, 0.2);
-        }
-
-        .question-text {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.3rem;
-            color: var(--burgundy);
-            margin-bottom: 20px;
-            font-weight: 600;
-        }
-
-        .options {
-            display: grid;
-            gap: 15px;
-        }
-
-        .option-btn {
-            padding: 15px 25px;
-            background: white;
-            border: 2px solid var(--blush);
-            border-radius: 12px;
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.1rem;
-            color: var(--burgundy);
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-align: left;
-            position: relative;
-        }
-
-        .option-btn:hover {
-            background: var(--cream);
-            border-color: var(--rose);
-            transform: translateX(5px);
-        }
-
-        .option-btn.selected {
-            background: var(--rose);
-            color: white;
-            border-color: var(--deep-rose);
-            font-weight: 600;
-        }
-
-        .option-btn.moving {
-            animation: moveAround 0.5s ease-in-out;
-        }
-
-        @keyframes moveAround {
-            0%, 100% {
-                transform: translate(0, 0);
-            }
-            25% {
-                transform: translate(-10px, -10px);
-            }
-            50% {
-                transform: translate(10px, 5px);
-            }
-            75% {
-                transform: translate(-5px, 10px);
-            }
-        }
-
-        .next-btn-container {
-            margin-top: 40px;
-            text-align: center;
-        }
-
-        .next-btn {
-            padding: 18px 60px;
-            background: linear-gradient(135deg, var(--deep-rose), var(--rose));
-            color: white;
-            border: none;
-            border-radius: 50px;
-            font-family: 'Playfair Display', serif;
-            font-size: 1.3rem;
-            cursor: not-allowed;
-            transition: all 0.3s ease;
-            opacity: 0.5;
-            position: relative;
-        }
-
-        .next-btn.enabled {
-            cursor: pointer;
-            opacity: 1;
-            box-shadow: 0 10px 30px rgba(201, 24, 74, 0.3);
-        }
-
-        .next-btn.enabled:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(201, 24, 74, 0.4);
-        }
-
-        .next-btn.moving {
-            animation: buttonDodge 0.4s ease-in-out;
-        }
-
-        @keyframes buttonDodge {
-            0%, 100% {
-                transform: translate(0, 0);
-            }
-            25% {
-                transform: translate(30px, -20px);
-            }
-            50% {
-                transform: translate(-30px, 20px);
-            }
-            75% {
-                transform: translate(20px, 10px);
             }
         }
 
@@ -252,25 +87,211 @@
 
         .heart {
             position: absolute;
-            font-size: 20px;
-            animation: float-up 8s infinite ease-in;
+            animation: float-up 10s infinite ease-in;
             opacity: 0;
         }
 
         @keyframes float-up {
             0% {
-                transform: translateY(100vh) rotate(0deg);
+                transform: translateY(110vh) rotate(0deg);
                 opacity: 0;
             }
             10% {
-                opacity: 0.7;
+                opacity: 0.6;
             }
             90% {
-                opacity: 0.7;
+                opacity: 0.6;
             }
             100% {
-                transform: translateY(-100px) rotate(360deg);
+                transform: translateY(-10vh) rotate(360deg);
                 opacity: 0;
+            }
+        }
+
+        /* Quiz Screen Styles */
+        .quiz-screen {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .quiz-container {
+            max-width: 600px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 25px;
+            padding: 40px 30px;
+            box-shadow: 
+                0 20px 60px rgba(201, 24, 74, 0.15),
+                0 0 0 1px rgba(255, 175, 204, 0.2);
+            animation: fadeInScale 1s ease-out;
+            backdrop-filter: blur(10px);
+        }
+
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .quiz-header {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .quiz-header h1 {
+            font-family: 'Great Vibes', cursive;
+            font-size: clamp(2.2rem, 7vw, 3.5rem);
+            color: var(--deep-rose);
+            margin-bottom: 12px;
+            line-height: 1.2;
+        }
+
+        .quiz-header p {
+            font-size: clamp(1rem, 3vw, 1.2rem);
+            color: var(--burgundy);
+            font-style: italic;
+            opacity: 0.9;
+        }
+
+        .question-block {
+            margin-bottom: 28px;
+            padding: 22px 18px;
+            background: rgba(255, 245, 247, 0.6);
+            border-radius: 18px;
+            border: 2px solid transparent;
+            transition: all 0.4s ease;
+        }
+
+        .question-block.answered {
+            border-color: var(--rose);
+            background: rgba(255, 175, 204, 0.25);
+            transform: scale(1.01);
+        }
+
+        .question-text {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.1rem, 3.5vw, 1.25rem);
+            color: var(--burgundy);
+            margin-bottom: 16px;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+
+        .options {
+            display: grid;
+            gap: 12px;
+        }
+
+        .option-btn {
+            padding: 14px 18px;
+            background: white;
+            border: 2px solid var(--blush);
+            border-radius: 12px;
+            font-family: 'Crimson Text', serif;
+            font-size: clamp(1rem, 2.8vw, 1.1rem);
+            color: var(--burgundy);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: left;
+            position: relative;
+            line-height: 1.5;
+            touch-action: manipulation;
+        }
+
+        .option-btn:active {
+            transform: scale(0.98);
+        }
+
+        .option-btn:hover {
+            background: var(--cream);
+            border-color: var(--rose);
+            transform: translateX(3px);
+        }
+
+        .option-btn.selected {
+            background: linear-gradient(135deg, var(--rose), var(--deep-rose));
+            color: white;
+            border-color: var(--deep-rose);
+            font-weight: 600;
+            transform: scale(1.02);
+        }
+
+        .option-btn.moving {
+            animation: moveAround 0.5s ease-in-out;
+        }
+
+        @keyframes moveAround {
+            0%, 100% {
+                transform: translate(0, 0);
+            }
+            25% {
+                transform: translate(-8px, -8px);
+            }
+            50% {
+                transform: translate(8px, 5px);
+            }
+            75% {
+                transform: translate(-5px, 8px);
+            }
+        }
+
+        .next-btn-container {
+            margin-top: 35px;
+            text-align: center;
+        }
+
+        .next-btn {
+            padding: 16px 50px;
+            background: linear-gradient(135deg, var(--deep-rose), var(--rose));
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.1rem, 3vw, 1.25rem);
+            cursor: not-allowed;
+            transition: all 0.4s ease;
+            opacity: 0.5;
+            position: relative;
+            touch-action: manipulation;
+            box-shadow: 0 4px 15px rgba(201, 24, 74, 0.2);
+        }
+
+        .next-btn.enabled {
+            cursor: pointer;
+            opacity: 1;
+            box-shadow: 0 8px 25px rgba(201, 24, 74, 0.3);
+        }
+
+        .next-btn.enabled:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 30px rgba(201, 24, 74, 0.4);
+        }
+
+        .next-btn.enabled:active {
+            transform: translateY(0);
+        }
+
+        .next-btn.moving {
+            animation: buttonDodge 0.5s ease-in-out;
+        }
+
+        @keyframes buttonDodge {
+            0%, 100% {
+                transform: translate(0, 0);
+            }
+            33% {
+                transform: translate(25px, -15px);
+            }
+            66% {
+                transform: translate(-25px, 15px);
             }
         }
 
@@ -280,22 +301,23 @@
             z-index: 10;
             max-width: 900px;
             margin: 0 auto;
-            padding: 60px 30px;
+            padding: 40px 20px;
         }
 
         .header {
             text-align: center;
-            margin-bottom: 80px;
+            margin-bottom: 50px;
             animation: fadeInDown 1.2s ease-out;
         }
 
         .header h1 {
-            font-family: 'Mrs Saint Delafield', cursive;
-            font-size: clamp(3rem, 8vw, 6rem);
+            font-family: 'Great Vibes', cursive;
+            font-size: clamp(2.5rem, 10vw, 5rem);
             color: var(--deep-rose);
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(201, 24, 74, 0.1);
-            animation: pulse 2s ease-in-out infinite;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 8px rgba(201, 24, 74, 0.15);
+            animation: pulse 3s ease-in-out infinite;
+            line-height: 1.2;
         }
 
         @keyframes pulse {
@@ -303,40 +325,48 @@
                 transform: scale(1);
             }
             50% {
-                transform: scale(1.03);
+                transform: scale(1.02);
             }
+        }
+
+        .header .from-to {
+            font-family: 'Dancing Script', cursive;
+            font-size: clamp(1.3rem, 4vw, 1.8rem);
+            color: var(--burgundy);
+            margin-bottom: 10px;
+            opacity: 0.85;
         }
 
         .header .date {
             font-family: 'Playfair Display', serif;
-            font-size: 1.4rem;
+            font-size: clamp(1rem, 3vw, 1.3rem);
             font-style: italic;
             color: var(--burgundy);
-            opacity: 0.8;
-            letter-spacing: 2px;
+            opacity: 0.75;
+            letter-spacing: 1px;
         }
 
         .letter {
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.95);
             border-radius: 20px;
-            padding: 60px 50px;
+            padding: 40px 30px;
             box-shadow: 
-                0 20px 60px rgba(201, 24, 74, 0.15),
-                0 0 0 1px rgba(255, 107, 157, 0.1);
-            margin-bottom: 60px;
+                0 15px 50px rgba(201, 24, 74, 0.12),
+                0 0 0 1px rgba(255, 107, 157, 0.08);
+            margin-bottom: 50px;
             position: relative;
             animation: fadeInUp 1.2s ease-out 0.3s backwards;
             backdrop-filter: blur(10px);
         }
 
         .letter::before {
-            content: '💕';
+            content: '💖';
             position: absolute;
-            top: -30px;
+            top: -25px;
             left: 50%;
             transform: translateX(-50%);
-            font-size: 3rem;
-            animation: bounce 2s ease-in-out infinite;
+            font-size: 2.5rem;
+            animation: bounce 2.5s ease-in-out infinite;
         }
 
         @keyframes bounce {
@@ -344,48 +374,56 @@
                 transform: translateX(-50%) translateY(0);
             }
             50% {
-                transform: translateX(-50%) translateY(-10px);
+                transform: translateX(-50%) translateY(-8px);
             }
         }
 
-        .letter p {
-            font-size: 1.3rem;
-            line-height: 2;
-            color: var(--burgundy);
+        .letter .greeting {
+            font-family: 'Dancing Script', cursive;
+            font-size: clamp(1.5rem, 4vw, 2rem);
+            color: var(--deep-rose);
             margin-bottom: 25px;
+        }
+
+        .letter p {
+            font-size: clamp(1.1rem, 3vw, 1.3rem);
+            line-height: 1.9;
+            color: var(--burgundy);
+            margin-bottom: 22px;
             text-align: justify;
             animation: fadeIn 1.5s ease-out 0.8s backwards;
         }
 
         .letter .signature {
-            font-family: 'Mrs Saint Delafield', cursive;
-            font-size: 2.5rem;
+            font-family: 'Great Vibes', cursive;
+            font-size: clamp(2rem, 5vw, 2.8rem);
             color: var(--deep-rose);
             text-align: right;
-            margin-top: 40px;
+            margin-top: 35px;
             animation: fadeIn 1.5s ease-out 1.2s backwards;
         }
 
         .gallery {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-bottom: 60px;
+            gap: 25px;
+            margin-bottom: 50px;
+            padding: 0 5px;
         }
 
         .photo-frame {
             background: white;
-            padding: 15px;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(201, 24, 74, 0.1);
+            padding: 12px;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(201, 24, 74, 0.1);
             transform: rotate(0deg);
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
             animation: fadeInUp 1.2s ease-out backwards;
         }
 
         .photo-frame:nth-child(1) {
             animation-delay: 0.4s;
-            transform: rotate(-2deg);
+            transform: rotate(-1.5deg);
         }
 
         .photo-frame:nth-child(2) {
@@ -395,7 +433,7 @@
 
         .photo-frame:nth-child(3) {
             animation-delay: 0.8s;
-            transform: rotate(-1deg);
+            transform: rotate(-0.5deg);
         }
 
         .photo-frame:hover {
@@ -408,11 +446,11 @@
             width: 100%;
             aspect-ratio: 4/3;
             background: linear-gradient(135deg, var(--blush) 0%, var(--rose) 100%);
-            border-radius: 5px;
+            border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 3rem;
+            font-size: clamp(2rem, 6vw, 3rem);
         }
 
         .photo-caption {
@@ -421,32 +459,33 @@
             text-align: center;
             margin-top: 10px;
             color: var(--burgundy);
-            font-size: 1.1rem;
+            font-size: clamp(1rem, 2.5vw, 1.1rem);
         }
 
         .reasons {
-            background: rgba(255, 255, 255, 0.8);
+            background: rgba(255, 255, 255, 0.85);
             border-radius: 20px;
-            padding: 50px 40px;
-            margin-bottom: 60px;
+            padding: 40px 30px;
+            margin-bottom: 50px;
             backdrop-filter: blur(10px);
             animation: fadeInUp 1.2s ease-out 1s backwards;
+            box-shadow: 0 10px 35px rgba(201, 24, 74, 0.08);
         }
 
         .reasons h2 {
             font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
+            font-size: clamp(1.8rem, 5vw, 2.5rem);
             color: var(--deep-rose);
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 35px;
         }
 
         .reason-item {
             display: flex;
             align-items: flex-start;
-            margin-bottom: 25px;
+            margin-bottom: 22px;
             opacity: 0;
-            animation: slideIn 0.6s ease-out forwards;
+            animation: slideIn 0.7s ease-out forwards;
         }
 
         .reason-item:nth-child(2) { animation-delay: 1.2s; }
@@ -454,11 +493,12 @@
         .reason-item:nth-child(4) { animation-delay: 1.6s; }
         .reason-item:nth-child(5) { animation-delay: 1.8s; }
         .reason-item:nth-child(6) { animation-delay: 2s; }
+        .reason-item:nth-child(7) { animation-delay: 2.2s; }
 
         @keyframes slideIn {
             from {
                 opacity: 0;
-                transform: translateX(-30px);
+                transform: translateX(-20px);
             }
             to {
                 opacity: 1;
@@ -468,16 +508,17 @@
 
         .reason-number {
             font-family: 'Playfair Display', serif;
-            font-size: 2rem;
+            font-size: clamp(1.5rem, 4vw, 2rem);
             font-weight: bold;
             color: var(--rose);
-            margin-right: 20px;
-            min-width: 40px;
+            margin-right: 15px;
+            min-width: 35px;
+            flex-shrink: 0;
         }
 
         .reason-text {
-            font-size: 1.2rem;
-            line-height: 1.8;
+            font-size: clamp(1.05rem, 2.8vw, 1.2rem);
+            line-height: 1.7;
             color: var(--burgundy);
         }
 
@@ -485,7 +526,7 @@
             text-align: center;
             background: linear-gradient(135deg, var(--deep-rose), var(--rose));
             color: white;
-            padding: 50px 40px;
+            padding: 45px 35px;
             border-radius: 20px;
             box-shadow: 0 15px 40px rgba(201, 24, 74, 0.3);
             animation: fadeInUp 1.2s ease-out 1.4s backwards;
@@ -493,14 +534,21 @@
 
         .footer-message h2 {
             font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            margin-bottom: 20px;
+            font-size: clamp(1.8rem, 5vw, 2.5rem);
+            margin-bottom: 18px;
         }
 
         .footer-message p {
-            font-size: 1.4rem;
+            font-size: clamp(1.15rem, 3vw, 1.4rem);
             line-height: 1.8;
             font-style: italic;
+        }
+
+        .footer-message .signature-name {
+            font-family: 'Great Vibes', cursive;
+            font-size: clamp(1.8rem, 5vw, 2.5rem);
+            margin-top: 20px;
+            display: block;
         }
 
         @keyframes fadeInDown {
@@ -534,29 +582,84 @@
             }
         }
 
+        /* Mobile optimizations */
         @media (max-width: 768px) {
             .quiz-container {
-                padding: 40px 25px;
+                padding: 35px 25px;
+                border-radius: 20px;
             }
 
             .container {
-                padding: 40px 20px;
+                padding: 30px 15px;
             }
 
             .letter {
-                padding: 40px 30px;
-            }
-
-            .letter p {
-                font-size: 1.1rem;
+                padding: 35px 25px;
+                border-radius: 16px;
             }
 
             .reasons {
-                padding: 40px 25px;
+                padding: 35px 25px;
+                border-radius: 16px;
             }
 
             .gallery {
                 grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .footer-message {
+                padding: 40px 25px;
+                border-radius: 16px;
+            }
+
+            .option-btn:hover {
+                transform: none;
+            }
+
+            .option-btn.selected {
+                transform: scale(1);
+            }
+
+            .photo-frame:hover {
+                transform: rotate(0deg) scale(1.02);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .quiz-container {
+                padding: 30px 20px;
+            }
+
+            .question-block {
+                padding: 18px 15px;
+            }
+
+            .letter {
+                padding: 30px 20px;
+            }
+
+            .reasons {
+                padding: 30px 20px;
+            }
+
+            .footer-message {
+                padding: 35px 20px;
+            }
+
+            .next-btn {
+                padding: 14px 40px;
+            }
+        }
+
+        /* Accessibility improvements */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
             }
         }
     </style>
@@ -569,8 +672,8 @@
     <div class="screen active quiz-screen" id="quizScreen">
         <div class="quiz-container">
             <div class="quiz-header">
-                <h1>Before We Begin...</h1>
-                <p>Answer these questions to unlock your surprise! 💖</p>
+                <h1>Before We Begin, My Love...</h1>
+                <p>Answer these questions to unlock your Valentine's surprise! 💖</p>
             </div>
 
             <!-- Question 1 -->
@@ -579,7 +682,7 @@
                 <div class="options">
                     <button class="option-btn" data-question="1" data-answer="a">The way we understand each other without words</button>
                     <button class="option-btn" data-question="1" data-answer="b">Every moment we spend together</button>
-                    <button class="option-btn" data-question="1" data-answer="c">All of the above and more</button>
+                    <button class="option-btn" data-question="1" data-answer="c">All of the above and infinitely more</button>
                 </div>
             </div>
 
@@ -588,7 +691,7 @@
                 <div class="question-text">2. What do you love most about us?</div>
                 <div class="options">
                     <button class="option-btn" data-question="2" data-answer="a">How we make each other laugh</button>
-                    <button class="option-btn" data-question="2" data-answer="b">The adventures we share</button>
+                    <button class="option-btn" data-question="2" data-answer="b">The adventures we share together</button>
                     <button class="option-btn" data-question="2" data-answer="c">How we support each other through everything</button>
                 </div>
             </div>
@@ -597,9 +700,9 @@
             <div class="question-block" data-question="3">
                 <div class="question-text">3. What does Valentine's Day mean to you?</div>
                 <div class="options">
-                    <button class="option-btn" data-question="3" data-answer="a">A day to celebrate our love</button>
-                    <button class="option-btn" data-question="3" data-answer="b">Another beautiful day with you</button>
-                    <button class="option-btn" data-question="3" data-answer="c">A reminder of how lucky we are</button>
+                    <button class="option-btn" data-question="3" data-answer="a">A special day to celebrate our beautiful love</button>
+                    <button class="option-btn" data-question="3" data-answer="b">Another wonderful day with you</button>
+                    <button class="option-btn" data-question="3" data-answer="c">A reminder of how blessed we are</button>
                 </div>
             </div>
 
@@ -609,12 +712,12 @@
                 <div class="options">
                     <button class="option-btn" data-question="4" data-answer="a">Excited for all the memories we'll create</button>
                     <button class="option-btn" data-question="4" data-answer="b">Grateful to share it with you</button>
-                    <button class="option-btn" data-question="4" data-answer="c">Looking forward to forever</button>
+                    <button class="option-btn" data-question="4" data-answer="c">Looking forward to our forever</button>
                 </div>
             </div>
 
             <div class="next-btn-container">
-                <button class="next-btn" id="nextBtn">Continue to Your Surprise 💕</button>
+                <button class="next-btn" id="nextBtn">Continue to Your Surprise 💖</button>
             </div>
         </div>
     </div>
@@ -623,66 +726,57 @@
     <div class="screen" id="letterScreen">
         <div class="container">
             <div class="header">
-                <h1>To My Beautiful Love</h1>
+                <h1>To My Beautiful SaiDhuMa</h1>
+                <div class="from-to">From Your UsMan 💖</div>
                 <div class="date">Valentine's Day 2026</div>
             </div>
 
             <div class="letter">
-                <p>My Dearest,</p>
+                <div class="greeting">My Dearest SaiDhuMa,</div>
                 
-                <p>Every moment with you feels like a beautiful dream I never want to wake up from. You've brought color to my world, joy to my days, and a love to my heart that I never knew was possible.</p>
+                <p>Every moment with you feels like a beautiful dream I never want to wake up from. You've brought colors to my world that I never knew existed, joy to my days that fills my heart, and a love so pure that it transforms everything around me.</p>
                 
-                <p>This Valentine's Day, I want you to know that you are my everything. Your smile brightens even my darkest days, your laughter is the sweetest melody, and your love is the greatest gift I've ever received.</p>
+                <p>This Valentine's Day, I want you to know that you are my everything. Your smile brightens even my darkest days, your laughter is the sweetest melody that plays in my heart, and your love is the greatest treasure I've ever received.</p>
                 
-                <p>Thank you for being you—for your kindness, your warmth, your beautiful soul. I am so grateful to walk through life with you by my side.</p>
+                <p>Thank you for being the amazing person you are—for your endless kindness, your warmth that melts my heart, your beautiful soul that inspires me every day. I am so incredibly grateful to walk through this journey of life with you by my side.</p>
                 
-                <p>I love you more than words can express, today and always.</p>
+                <p>I love you more than words could ever express, more than actions could ever show. Today, tomorrow, and always—you are my forever.</p>
                 
-                <div class="signature">Forever Yours ❤️</div>
-            </div>
-
-            <div class="gallery">
-                <div class="photo-frame">
-                    <div class="photo-placeholder">📸</div>
-                    <div class="photo-caption">Our First Date</div>
-                </div>
-                <div class="photo-frame">
-                    <div class="photo-placeholder">💑</div>
-                    <div class="photo-caption">Best Moments Together</div>
-                </div>
-                <div class="photo-frame">
-                    <div class="photo-placeholder">🌹</div>
-                    <div class="photo-caption">Forever in Love</div>
-                </div>
+                <div class="signature">Forever and Always Yours,<br>UsMan ❤️</div>
             </div>
 
             <div class="reasons">
-                <h2>Reasons I Love You</h2>
+                <h2>Reasons I Love You, SaiDhuMa</h2>
                 <div class="reason-item">
                     <div class="reason-number">1.</div>
-                    <div class="reason-text">Your smile lights up my entire world and makes everything better</div>
+                    <div class="reason-text">Your radiant smile that lights up my entire world and makes everything better, no matter how difficult the day has been</div>
                 </div>
                 <div class="reason-item">
                     <div class="reason-number">2.</div>
-                    <div class="reason-text">The way you care for others with such a kind and genuine heart</div>
+                    <div class="reason-text">The way you care for others with such a kind, genuine, and beautiful heart that touches everyone around you</div>
                 </div>
                 <div class="reason-item">
                     <div class="reason-number">3.</div>
-                    <div class="reason-text">How you make me laugh even on the hardest days</div>
+                    <div class="reason-text">How you make me laugh even on the hardest days, bringing joy and lightness to every moment we share</div>
                 </div>
                 <div class="reason-item">
                     <div class="reason-number">4.</div>
-                    <div class="reason-text">Your strength, courage, and the beautiful person you are inside and out</div>
+                    <div class="reason-text">Your incredible strength, courage, and the absolutely beautiful person you are, inside and out</div>
                 </div>
                 <div class="reason-item">
                     <div class="reason-number">5.</div>
-                    <div class="reason-text">The way you understand me like no one else ever has</div>
+                    <div class="reason-text">The way you understand me like no one else ever has, knowing my heart even without words</div>
+                </div>
+                <div class="reason-item">
+                    <div class="reason-number">6.</div>
+                    <div class="reason-text">How you make every ordinary moment feel extraordinary just by being there with me</div>
                 </div>
             </div>
 
             <div class="footer-message">
-                <h2>Happy Valentine's Day! 💕</h2>
-                <p>You are my today and all of my tomorrows.<br>I love you endlessly.</p>
+                <h2>Happy Valentine's Day, My Love! 💖</h2>
+                <p>You are my today and all of my tomorrows.<br>You are my dream come true, my best friend, my soulmate.<br>I love you endlessly and eternally.</p>
+                <span class="signature-name">— Your UsMan ❤️</span>
             </div>
         </div>
     </div>
@@ -695,7 +789,8 @@
         
         // Handle option selection
         document.querySelectorAll('.option-btn').forEach(btn => {
-            btn.addEventListener('click', function() {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
                 const questionNum = this.getAttribute('data-question');
                 const questionBlock = document.querySelector(`.question-block[data-question="${questionNum}"]`);
                 
@@ -725,7 +820,8 @@
         }
 
         // Handle next button click
-        nextBtn.addEventListener('click', function() {
+        nextBtn.addEventListener('click', function(e) {
+            e.preventDefault();
             if (answeredQuestions.size === totalQuestions) {
                 // All questions answered - fade out quiz and go to next screen
                 const quizScreen = document.getElementById('quizScreen');
@@ -738,21 +834,21 @@
                 setTimeout(() => {
                     quizScreen.classList.remove('active', 'fade-out');
                     letterScreen.classList.add('active', 'fade-in');
-                    window.scrollTo(0, 0);
-                }, 800);
+                    window.scrollTo({top: 0, behavior: 'smooth'});
+                }, 1000);
             } else {
                 // Not all answered - make button dodge
                 this.classList.add('moving');
                 setTimeout(() => {
                     this.classList.remove('moving');
-                }, 400);
+                }, 500);
             }
         });
 
-        // Make unanswered question options move when hovered
+        // Make unanswered question options move when hovered/touched
         document.querySelectorAll('.option-btn').forEach(btn => {
-            btn.addEventListener('mouseenter', function() {
-                const questionNum = this.getAttribute('data-question');
+            const moveOptions = function() {
+                const questionNum = btn.getAttribute('data-question');
                 const questionBlock = document.querySelector(`.question-block[data-question="${questionNum}"]`);
                 
                 // If question not answered yet, make options move
@@ -764,7 +860,10 @@
                         }, 500);
                     });
                 }
-            });
+            };
+
+            btn.addEventListener('mouseenter', moveOptions);
+            btn.addEventListener('touchstart', moveOptions, {passive: true});
         });
 
         // Create floating hearts
@@ -772,24 +871,41 @@
             const heartsContainer = document.getElementById('heartsContainer');
             const heart = document.createElement('div');
             heart.className = 'heart';
-            heart.innerHTML = '❤️';
+            
+            // Variety of heart emojis
+            const heartTypes = ['❤️', '💕', '💖', '💗', '💝', '💘'];
+            heart.innerHTML = heartTypes[Math.floor(Math.random() * heartTypes.length)];
+            
             heart.style.left = Math.random() * 100 + '%';
-            heart.style.animationDuration = (Math.random() * 3 + 6) + 's';
-            heart.style.animationDelay = Math.random() * 2 + 's';
-            heart.style.fontSize = (Math.random() * 10 + 15) + 'px';
+            heart.style.animationDuration = (Math.random() * 4 + 8) + 's';
+            heart.style.animationDelay = Math.random() * 3 + 's';
+            heart.style.fontSize = (Math.random() * 12 + 16) + 'px';
             
             heartsContainer.appendChild(heart);
             
+            // Remove heart after animation
             setTimeout(() => {
                 heart.remove();
-            }, 10000);
+            }, 12000);
         }
 
-        setInterval(createHeart, 800);
+        // Create hearts at intervals
+        setInterval(createHeart, 1000);
         
-        for (let i = 0; i < 10; i++) {
-            setTimeout(createHeart, i * 200);
+        // Create initial batch of hearts
+        for (let i = 0; i < 8; i++) {
+            setTimeout(createHeart, i * 300);
         }
+
+        // Prevent zoom on double tap for iOS
+        let lastTouchEnd = 0;
+        document.addEventListener('touchend', function(event) {
+            const now = (new Date()).getTime();
+            if (now - lastTouchEnd <= 300) {
+                event.preventDefault();
+            }
+            lastTouchEnd = now;
+        }, false);
     </script>
 </body>
 </html>
