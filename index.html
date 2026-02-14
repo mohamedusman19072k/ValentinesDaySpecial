@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SaiDhuMa💖UsMan</title>
   <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Great+Vibes&family=Dancing+Script:wght@400;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Great+Vibes&family=Dancing+Script:wght@400;700&family=Noto+Sans+Tamil:wght@300;400;600;700&display=swap"
     rel="stylesheet">
   <style>
     :root {
@@ -33,6 +33,47 @@
       color: var(--charcoal);
       overflow-x: hidden;
       position: relative;
+    }
+
+    body.tamil {
+      font-family: 'Noto Sans Tamil', sans-serif;
+    }
+
+    /* Language Toggle Button */
+    .language-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 1000;
+      background: linear-gradient(135deg, var(--rose-gold), var(--deep-rose));
+      color: white;
+      border: none;
+      padding: 0.8rem 1.5rem;
+      font-size: clamp(0.9rem, 2.5vw, 1rem);
+      font-family: 'Playfair Display', serif;
+      font-weight: 500;
+      letter-spacing: 1px;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 20px rgba(201, 24, 74, 0.3);
+      touch-action: manipulation;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .language-toggle:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(201, 24, 74, 0.4);
+    }
+
+    .language-toggle:active {
+      transform: translateY(0);
+    }
+
+    .language-icon {
+      font-size: 1.2rem;
     }
 
     /* Floating hearts background */
@@ -92,7 +133,6 @@
     }
 
     @keyframes pulse {
-
       0%,
       100% {
         transform: scale(1);
@@ -114,6 +154,11 @@
       line-height: 1.2;
     }
 
+    body.tamil .title {
+      font-family: 'Noto Sans Tamil', sans-serif;
+      font-weight: 700;
+    }
+
     .subtitle {
       font-family: 'Dancing Script', cursive;
       font-size: clamp(1.3rem, 4vw, 2rem);
@@ -122,6 +167,11 @@
       margin-bottom: 0.5rem;
       opacity: 0;
       animation: fadeInUp 1.5s ease forwards 0.5s;
+    }
+
+    body.tamil .subtitle {
+      font-family: 'Noto Sans Tamil', sans-serif;
+      font-weight: 600;
     }
 
     .date-text {
@@ -213,11 +263,21 @@
       line-height: 1.2;
     }
 
+    body.tamil .content-header h1 {
+      font-family: 'Noto Sans Tamil', sans-serif;
+      font-weight: 700;
+    }
+
     .content-header .from-text {
       font-family: 'Dancing Script', cursive;
       font-size: clamp(1.3rem, 4vw, 1.8rem);
       color: var(--burgundy);
       margin-bottom: 0.5rem;
+    }
+
+    body.tamil .content-header .from-text {
+      font-family: 'Noto Sans Tamil', sans-serif;
+      font-weight: 600;
     }
 
     .content-header .date {
@@ -265,6 +325,11 @@
       margin-bottom: 2rem;
     }
 
+    body.tamil .letter-greeting {
+      font-family: 'Noto Sans Tamil', sans-serif;
+      font-weight: 600;
+    }
+
     .letter-paragraph {
       font-size: clamp(1.1rem, 3vw, 1.35rem);
       line-height: 2;
@@ -281,16 +346,21 @@
       text-align: right;
     }
 
+    body.tamil .letter-signature {
+      font-family: 'Noto Sans Tamil', sans-serif;
+      font-weight: 600;
+    }
+
     .signature-name {
       display: block;
       margin-top: 0.5rem;
     }
 
-    /* Photo Gallery / Slideshow */
-    .gallery-section {
+    /* Reasons I Love You - Interactive Cards */
+    .reasons-section {
       margin-bottom: 4rem;
       opacity: 0;
-      animation: slideInUp 1s ease forwards 0.6s;
+      animation: slideInUp 1s ease forwards 0.9s;
     }
 
     .section-title {
@@ -302,117 +372,10 @@
       font-style: italic;
     }
 
-    .slideshow-container {
-      position: relative;
-      max-width: 800px;
-      margin: 0 auto;
-      background: white;
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
-    }
-
-    .slide {
-      display: none;
-      position: relative;
-    }
-
-    .slide.active {
-      display: block;
-      animation: slideAnimation 0.8s ease;
-    }
-
-    @keyframes slideAnimation {
-      from {
-        opacity: 0;
-        transform: scale(0.98);
-      }
-
-      to {
-        opacity: 1;
-        transform: scale(1);
-      }
-    }
-
-    .slide-image {
-      width: 100%;
-      height: clamp(300px, 50vw, 500px);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: linear-gradient(135deg, var(--soft-pink), var(--blush));
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2rem, 6vw, 3rem);
-      color: var(--rose-gold);
-      font-style: italic;
-    }
-
-    .slide-caption {
-      padding: 2rem;
-      text-align: center;
-      font-size: clamp(1.1rem, 3vw, 1.3rem);
-      color: var(--charcoal);
-      font-style: italic;
-    }
-
-    .slide-nav {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(255, 255, 255, 0.95);
-      border: none;
-      color: var(--rose-gold);
-      font-size: clamp(1.5rem, 4vw, 2rem);
-      padding: clamp(0.7rem, 2vw, 1rem) clamp(1rem, 3vw, 1.5rem);
-      cursor: pointer;
-      transition: all 0.3s ease;
-      border-radius: 10px;
-      touch-action: manipulation;
-    }
-
-    .slide-nav:hover {
-      background: var(--rose-gold);
-      color: white;
-    }
-
-    .slide-nav:active {
-      transform: translateY(-50%) scale(0.95);
-    }
-
-    .prev {
-      left: 15px;
-    }
-
-    .next {
-      right: 15px;
-    }
-
-    .slide-dots {
-      text-align: center;
-      padding: 2rem 0;
-    }
-
-    .dot {
-      height: 12px;
-      width: 12px;
-      margin: 0 8px;
-      background-color: var(--soft-pink);
-      border-radius: 50%;
-      display: inline-block;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-
-    .dot.active {
-      background-color: var(--rose-gold);
-      transform: scale(1.3);
-    }
-
-    /* Reasons I Love You - Interactive Cards */
-    .reasons-section {
-      margin-bottom: 4rem;
-      opacity: 0;
-      animation: slideInUp 1s ease forwards 0.9s;
+    body.tamil .section-title {
+      font-family: 'Noto Sans Tamil', sans-serif;
+      font-weight: 700;
+      font-style: normal;
     }
 
     .reasons-grid {
@@ -473,6 +436,12 @@
       font-style: italic;
       position: relative;
       z-index: 1;
+    }
+
+    body.tamil .reason-title {
+      font-family: 'Noto Sans Tamil', sans-serif;
+      font-weight: 600;
+      font-style: normal;
     }
 
     .reason-content {
@@ -569,6 +538,12 @@
       font-style: italic;
     }
 
+    body.tamil .timeline-title {
+      font-family: 'Noto Sans Tamil', sans-serif;
+      font-weight: 600;
+      font-style: normal;
+    }
+
     .timeline-text {
       font-size: clamp(1rem, 2.5vw, 1.1rem);
       line-height: 1.8;
@@ -616,6 +591,10 @@
       line-height: 1.8;
       color: var(--charcoal);
       font-style: italic;
+    }
+
+    body.tamil .promise-text {
+      font-style: normal;
     }
 
     /* Footer */
@@ -674,12 +653,21 @@
       font-weight: 300;
     }
 
+    body.tamil .footer-title {
+      font-family: 'Noto Sans Tamil', sans-serif;
+      font-weight: 700;
+    }
+
     .footer-message {
       font-size: clamp(1.1rem, 3vw, 1.3rem);
       margin-bottom: 2rem;
       font-weight: 300;
       letter-spacing: 1px;
       font-style: italic;
+    }
+
+    body.tamil .footer-message {
+      font-style: normal;
     }
 
     .footer-divider {
@@ -707,10 +695,19 @@
       margin: 2rem 0;
     }
 
+    body.tamil .footer-quote {
+      font-style: normal;
+    }
+
     .footer-names {
       font-family: 'Dancing Script', cursive;
       font-size: clamp(1.5rem, 4vw, 2rem);
       margin: 2rem 0;
+    }
+
+    body.tamil .footer-names {
+      font-family: 'Noto Sans Tamil', sans-serif;
+      font-weight: 600;
     }
 
     .footer-date {
@@ -870,10 +867,6 @@
         width: 100%;
       }
 
-      .slide-nav {
-        padding: 0.5rem 0.8rem;
-      }
-
       .reasons-grid,
       .promises-grid {
         grid-template-columns: 1fr;
@@ -892,6 +885,13 @@
       .timeline-item {
         padding-left: 70px;
       }
+
+      .language-toggle {
+        top: 15px;
+        right: 15px;
+        padding: 0.6rem 1.2rem;
+        font-size: 0.85rem;
+      }
     }
 
     /* Accessibility */
@@ -909,16 +909,22 @@
 </head>
 
 <body>
+  <!-- Language Toggle Button -->
+  <button class="language-toggle" onclick="toggleLanguage()" id="langBtn">
+    <span class="language-icon">🌐</span>
+    <span id="langText">தமிழ்</span>
+  </button>
+
   <!-- Floating Hearts Background -->
   <div class="hearts-container" id="heartsContainer"></div>
 
   <!-- Landing Section -->
   <section class="landing" id="landing">
     <div class="landing-heart">💖</div>
-    <h1 class="title">To My Beautiful SaiDhuMa</h1>
-    <p class="subtitle">From Your Loving UsMan</p>
-    <p class="date-text">Valentine's Day 2026</p>
-    <button class="reveal-btn" onclick="revealContent()">Open Your Heart 💝</button>
+    <h1 class="title" data-en="To My Beautiful SaiDhuMa" data-ta="என் அழகான சைதுமாவுக்கு">To My Beautiful SaiDhuMa</h1>
+    <p class="subtitle" data-en="From Your Loving UsMan" data-ta="உங்கள் அன்பான உஸ்மானிடமிருந்து">From Your Loving UsMan</p>
+    <p class="date-text" data-en="Valentine's Day 2026" data-ta="காதலர் தினம் 2026">Valentine's Day 2026</p>
+    <button class="reveal-btn" onclick="revealContent()" data-en="Open Your Heart 💝" data-ta="என் இதயத்தை திறங்கள் 💝">Open My Heart 💝</button>
   </section>
 
   <!-- Main Content Section -->
@@ -926,9 +932,9 @@
     <div class="content-wrapper">
       <!-- Header -->
       <div class="content-header">
-        <h1>My Dearest SaiDhuMa</h1>
-        <p class="from-text">From Your UsMan 💖</p>
-        <p class="date">Valentine's Day 2026</p>
+        <h1 data-en="My Dearest SaiDhuMa" data-ta="என் அன்பான சைதுமா">My Dearest SaiDhuMa</h1>
+        <p class="from-text" data-en="From Your UsMan 💖" data-ta="உங்கள் உஸ்மானிடமிருந்து 💖">From Your UsMan 💖</p>
+        <p class="date" data-en="Valentine's Day 2026" data-ta="காதலர் தினம் 2026">Valentine's Day 2026</p>
       </div>
 
       <!-- Love Letter Section -->
@@ -938,27 +944,27 @@
             <div class="letter-seal">💌</div>
           </div>
           <div class="letter-body">
-            <p class="letter-greeting">My Dearest SaiDhuMa,</p>
-            <p class="letter-paragraph">
+            <p class="letter-greeting" data-en="My Dearest SaiDhuMa," data-ta="என் அன்பான சைதுமா,">My Dearest SaiDhuMa,</p>
+            <p class="letter-paragraph" data-en="Every moment with you feels like a beautiful dream I never want to wake up from. You've brought colors to my world that I never knew existed, joy to my days that fills my heart, and a love so pure that it transforms everything around me." data-ta="உங்களுடன் இருக்கும் ஒவ்வொரு கணமும் நான் விழித்துக்கொள்ள விரும்பாத அழகான கனவு போன்றது. நீங்கள் என் உலகில் நான் அறியாத வண்ணங்களைக் கொண்டு வந்துள்ளீர்கள், என் நாட்களில் என் இதயத்தை நிரப்பும் மகிழ்ச்சியையும், என்னைச் சுற்றியுள்ள அனைத்தையும் மாற்றும் தூய்மையான அன்பையும் தந்துள்ளீர்கள்.">
               Every moment with you feels like a beautiful dream I never want to wake up from. You've brought colors to
               my world that I never knew existed, joy to my days that fills my heart, and a love so pure that it
               transforms everything around me.
             </p>
-            <p class="letter-paragraph">
+            <p class="letter-paragraph" data-en="This Valentine's Day, I want you to know that you are my everything. Your smile brightens even my darkest days, your laughter is the sweetest melody that plays in my heart, and your love is the greatest treasure I've ever received." data-ta="இந்த காதலர் தினத்தில், நீங்கள் என் அனைத்தும் என்பதை நீங்கள் அறிய வேண்டும் என்று விரும்புகிறேன். உங்கள் புன்னகை என் இருண்ட நாட்களில் கூட வெளிச்சம் தருகிறது, உங்கள் சிரிப்பு என் இதயத்தில் ஒலிக்கும் இனிமையான இசை, உங்கள் அன்பு நான் பெற்ற மிகப்பெரிய பொக்கிஷம்.">
               This Valentine's Day, I want you to know that you are my everything. Your smile brightens even my darkest
               days, your laughter is the sweetest melody that plays in my heart, and your love is the greatest treasure
               I've ever received.
             </p>
-            <p class="letter-paragraph">
+            <p class="letter-paragraph" data-en="Thank you for being the amazing person you are—for your endless kindness, your warmth that melts my heart, your beautiful soul that inspires me every day. I am so incredibly grateful to walk through this journey of life with you by my side." data-ta="நீங்கள் இருக்கும் அற்புதமான நபராக இருப்பதற்கு நன்றி—உங்கள் முடிவில்லாத கருணைக்கு, என் இதயத்தை உருக்கும் உங்கள் அரவணைப்புக்கு, ஒவ்வொரு நாளும் என்னை ஊக்குவிக்கும் உங்கள் அழகான ஆன்மாவிற்கு நன்றி. உங்கள் பக்கத்தில் வாழ்க்கைப் பயணத்தில் நடக்க முடிந்ததற்கு நான் மிகவும் நன்றியுள்ளவனாக இருக்கிறேன்.">
               Thank you for being the amazing person you are—for your endless kindness, your warmth that melts my heart,
               your beautiful soul that inspires me every day. I am so incredibly grateful to walk through this journey
               of life with you by my side.
             </p>
-            <p class="letter-paragraph">
+            <p class="letter-paragraph" data-en="I love you more than words could ever express, more than actions could ever show. Today, tomorrow, and always—you are my forever." data-ta="வார்த்தைகள் வெளிப்படுத்த முடியாததை விட அதிகமாக, செயல்கள் காட்ட முடியாததை விட அதிகமாக நான் உங்களை நேசிக்கிறேன். இன்று, நாளை, எப்போதும்—நீங்கள் என் என்றும்.">
               I love you more than words could ever express, more than actions could ever show. Today, tomorrow, and
               always—you are my forever.
             </p>
-            <p class="letter-signature">
+            <p class="letter-signature" data-en="Forever and Always Yours,<br>UsMan 💝" data-ta="எப்போதும் உங்களுடையவன்,<br>உஸ்மான் 💝">
               Forever and Always Yours,<br>
               <span class="signature-name">UsMan 💝</span>
             </p>
@@ -968,12 +974,12 @@
 
       <!-- Reasons I Love You -->
       <div class="reasons-section">
-        <h2 class="section-title">Reasons I Love You, SaiDhuMa</h2>
+        <h2 class="section-title" data-en="Reasons I Love You, SaiDhuMa" data-ta="நான் உங்களை நேசிக்கும் காரணங்கள், சைதுமா">Reasons I Love You, SaiDhuMa</h2>
         <div class="reasons-grid">
           <div class="reason-card" onclick="toggleReveal(this)">
             <div class="reason-icon">🥰</div>
-            <div class="reason-title">Your Radiant Smile</div>
-            <div class="reason-content">
+            <div class="reason-title" data-en="Your Radiant Smile" data-ta="உங்கள் ஒளிரும் புன்னகை">Your Radiant Smile</div>
+            <div class="reason-content" data-en="Your smile lights up my entire world and makes everything better, no matter how difficult the day has been. It's the first thing I think about when I wake up and the last thing I see before I sleep." data-ta="உங்கள் புன்னகை என் உலகம் முழுவதையும் ஒளிர வைக்கிறது மற்றும் நாள் எவ்வளவு கடினமாக இருந்தாலும் எல்லாவற்றையும் சிறப்பாக மாற்றுகிறது. நான் விழித்தெழும்போது நினைக்கும் முதல் விஷயம் இதுதான், தூங்குவதற்கு முன் பார்க்கும் கடைசி விஷயமும் இதுதான்.">
               Your smile lights up my entire world and makes everything better, no matter how difficult the day has
               been. It's the first thing I think about when I wake up and the last thing I see before I sleep.
             </div>
@@ -981,19 +987,17 @@
 
           <div class="reason-card" onclick="toggleReveal(this)">
             <div class="reason-icon">💗</div>
-            <div class="reason-title">Your Beautiful Heart</div>
-            <div class="reason-content">
+            <div class="reason-title" data-en="Your Beautiful Heart" data-ta="உங்கள் அழகான இதயம்">Your Beautiful Heart</div>
+            <div class="reason-content" data-en="The way you care for others with such a kind, genuine, and beautiful heart touches everyone around you. Your compassion and understanding make you absolutely extraordinary." data-ta="இவ்வளவு அன்பான, உண்மையான மற்றும் அழகான இதயத்துடன் நீங்கள் மற்றவர்களை கவனித்துக்கொள்ளும் விதம் உங்களைச் சுற்றியுள்ள அனைவரையும் தொடுகிறது. உங்கள் இரக்கமும் புரிதலும் உங்களை முற்றிலும் அசாதாரணமாக்குகிறது.">
               The way you care for others with such a kind, genuine, and beautiful heart touches everyone around you.
               Your compassion and understanding make you absolutely extraordinary.
             </div>
           </div>
 
-
-
           <div class="reason-card" onclick="toggleReveal(this)">
             <div class="reason-icon">👩‍❤️‍👨</div>
-            <div class="reason-title">Your Joyful Laughter</div>
-            <div class="reason-content">
+            <div class="reason-title" data-en="Your Joyful Laughter" data-ta="உங்கள் மகிழ்ச்சியான சிரிப்பு">Your Joyful Laughter</div>
+            <div class="reason-content" data-en="How you make me laugh even on the hardest days, bringing joy and lightness to every moment we share. Your laugh is my favorite sound in the world, and it fills my heart with happiness." data-ta="கடினமான நாட்களில் கூட நீங்கள் என்னை சிரிக்க வைக்கிறீர்கள், நாம் பகிர்ந்து கொள்ளும் ஒவ்வொரு தருணத்திற்கும் மகிழ்ச்சியையும் இலகுவையும் கொண்டு வருகிறீர்கள். உங்கள் சிரிப்பு உலகில் எனக்கு மிகவும் பிடித்த ஒலி, அது என் இதயத்தை மகிழ்ச்சியால் நிரப்புகிறது.">
               How you make me laugh even on the hardest days, bringing joy and lightness to every moment we share. Your
               laugh is my favorite sound in the world, and it fills my heart with happiness.
             </div>
@@ -1001,8 +1005,8 @@
 
           <div class="reason-card" onclick="toggleReveal(this)">
             <div class="reason-icon">✨</div>
-            <div class="reason-title">Your Amazing Strength</div>
-            <div class="reason-content">
+            <div class="reason-title" data-en="Your Amazing Strength" data-ta="உங்கள் அற்புதமான வலிமை">Your Amazing Strength</div>
+            <div class="reason-content" data-en="Your incredible strength, courage, and the absolutely beautiful person you are, inside and out. You inspire me every day to be better and reach for my dreams." data-ta="உங்கள் நம்பமுடியாத வலிமை, தைரியம் மற்றும் நீங்கள் உள்ளேயும் வெளியேயும் முற்றிலும் அழகான நபர். சிறப்பாக இருக்கவும் என் கனவுகளை அடையவும் நீங்கள் ஒவ்வொரு நாளும் என்னை ஊக்குவிக்கிறீர்கள்.">
               Your incredible strength, courage, and the absolutely beautiful person you are, inside and out. You
               inspire me every day to be better and reach for my dreams.
             </div>
@@ -1010,8 +1014,8 @@
 
           <div class="reason-card" onclick="toggleReveal(this)">
             <div class="reason-icon">🫶</div>
-            <div class="reason-title">How You Understand Me</div>
-            <div class="reason-content">
+            <div class="reason-title" data-en="How You Understand Me" data-ta="நீங்கள் என்னை புரிந்துகொள்வது">How You Understand Me</div>
+            <div class="reason-content" data-en="The way you understand me like no one else ever has, knowing my heart even without words. You see the real me and love me completely, flaws and all." data-ta="வேறு யாரும் இல்லாத விதத்தில் நீங்கள் என்னை புரிந்துகொள்கிறீர்கள், வார்த்தைகள் இல்லாமல் கூட என் இதயத்தை அறிந்திருக்கிறீர்கள். நீங்கள் உண்மையான என்னைப் பார்க்கிறீர்கள் மற்றும் குறைபாடுகளுடன் என்னை முழுமையாக நேசிக்கிறீர்கள்.">
               The way you understand me like no one else ever has, knowing my heart even without words. You see the real
               me and love me completely, flaws and all.
             </div>
@@ -1019,8 +1023,8 @@
 
           <div class="reason-card" onclick="toggleReveal(this)">
             <div class="reason-icon">🤌</div>
-            <div class="reason-title">Simply You</div>
-            <div class="reason-content">
+            <div class="reason-title" data-en="Simply You" data-ta="வெறுமனே நீங்கள்">Simply You</div>
+            <div class="reason-content" data-en="How you make every ordinary moment feel extraordinary just by being there with me. You're perfect in my eyes, and I wouldn't change a single thing about you." data-ta="என்னுடன் இருப்பதன் மூலம் ஒவ்வொரு சாதாரண தருணத்தையும் அசாதாரணமாக உணர வைக்கிறீர்கள். என் கண்களில் நீங்கள் பரிபூரணமானவர், உங்களைப் பற்றி ஒரு விஷயத்தைக் கூட நான் மாற்ற மாட்டேன்.">
               How you make every ordinary moment feel extraordinary just by being there with me. You're perfect in my
               eyes, and I wouldn't change a single thing about you.
             </div>
@@ -1030,13 +1034,13 @@
 
       <!-- Our Journey Timeline -->
       <div class="timeline-section">
-        <h2 class="section-title">Our Journey Together</h2>
+        <h2 class="section-title" data-en="Our Journey Together" data-ta="நம்முடைய பயணம்">Our Journey Together</h2>
         <div class="timeline">
           <div class="timeline-item">
             <div class="timeline-marker">💫</div>
             <div class="timeline-content">
-              <h3 class="timeline-title">The First Meeting</h3>
-              <p class="timeline-text">
+              <h3 class="timeline-title" data-en="The First Meeting" data-ta="முதல் சந்திப்பு">The First Meeting</h3>
+              <p class="timeline-text" data-en="The day our paths crossed was the day everything changed. I remember every detail—the way you smiled, the sound of your voice, the instant connection we shared. Little did I know, I was meeting my forever." data-ta="நம் பாதைகள் குறுக்கிட்ட நாள் எல்லாம் மாறிய நாள். ஒவ்வொரு விவரமும் எனக்கு நினைவிருக்கிறது—நீங்கள் புன்னகைத்த விதம், உங்கள் குரலின் ஒலி, நாம் பகிர்ந்த உடனடி இணைப்பு. நான் என் என்றென்றும் சந்திக்கிறேன் என்று எனக்குத் தெரியாது.">
                 The day our paths crossed was the day everything changed. I remember every detail—the way you smiled,
                 the sound of your voice, the instant connection we shared. Little did I know, I was meeting my forever.
               </p>
@@ -1046,8 +1050,8 @@
           <div class="timeline-item">
             <div class="timeline-marker">👩‍❤️‍👨</div>
             <div class="timeline-content">
-              <h3 class="timeline-title">Falling in Love</h3>
-              <p class="timeline-text">
+              <h3 class="timeline-title" data-en="Falling in Love" data-ta="காதலில் விழுதல்">Falling in Love</h3>
+              <p class="timeline-text" data-en="It wasn't just one moment—it was a thousand little moments. Every laugh, every deep conversation, every comfortable silence. Each one drew me closer to you, until I realized I had completely fallen for you." data-ta="இது ஒரு கணம் மட்டும் அல்ல—இது ஆயிரம் சிறு தருணங்கள். ஒவ்வொரு சிரிப்பும், ஒவ்வொரு ஆழமான உரையாடலும், ஒவ்வொரு வசதியான மௌனமும். ஒவ்வொன்றும் என்னை உங்களுக்கு நெருக்கமாக இழுத்தது, நான் உங்களுக்காக முற்றிலும் விழுந்துவிட்டேன் என்பதை உணரும் வரை.">
                 It wasn't just one moment—it was a thousand little moments. Every laugh, every deep conversation, every
                 comfortable silence. Each one drew me closer to you, until I realized I had completely fallen for you.
               </p>
@@ -1057,8 +1061,8 @@
           <div class="timeline-item">
             <div class="timeline-marker">💖</div>
             <div class="timeline-content">
-              <h3 class="timeline-title">Our Beautiful Adventures</h3>
-              <p class="timeline-text">
+              <h3 class="timeline-title" data-en="Our Beautiful Adventures" data-ta="நம்முடைய அழகான சாகசங்கள்">Our Beautiful Adventures</h3>
+              <p class="timeline-text" data-en="From spontaneous adventures to quiet evenings together, every experience with you becomes a cherished memory. You've turned ordinary moments into extraordinary ones that I'll treasure forever." data-ta="தன்னிச்சையான சாகசங்கள் முதல் அமைதியான மாலைகள் வரை, உங்களுடன் இருக்கும் ஒவ்வொரு அனுபவமும் அன்பான நினைவாக மாறுகிறது. நீங்கள் சாதாரண தருணங்களை அசாதாரணமான தருணங்களாக மாற்றியுள்ளீர்கள், அதை நான் என்றென்றும் பொக்கிஷமாக வைத்திருப்பேன்.">
                 From spontaneous adventures to quiet evenings together, every experience with you becomes a cherished
                 memory. You've turned ordinary moments into extraordinary ones that I'll treasure forever.
               </p>
@@ -1068,8 +1072,8 @@
           <div class="timeline-item">
             <div class="timeline-marker">💍</div>
             <div class="timeline-content">
-              <h3 class="timeline-title">Forever Together</h3>
-              <p class="timeline-text">
+              <h3 class="timeline-title" data-en="Forever Together" data-ta="என்றென்றும் ஒன்றாக">Forever Together</h3>
+              <p class="timeline-text" data-en="The day I asked you to be my forever was the best decision of my life. Building our future together, hand in hand, heart to heart—this is just the beginning of our beautiful story." data-ta="நீங்கள் என் என்றென்றும் இருக்க வேண்டும் என்று கேட்ட நாள் என் வாழ்க்கையின் சிறந்த முடிவு. நம் எதிர்காலத்தை ஒன்றாக உருவாக்குவது, கையோடு கை, இதயத்திலிருந்து இதயம்—இது நம் அழகான கதையின் தொடக்கம் மட்டுமே.">
                 The day I asked you to be my forever was the best decision of my life. Building our future together,
                 hand in hand, heart to heart—this is just the beginning of our beautiful story.
               </p>
@@ -1079,8 +1083,8 @@
           <div class="timeline-item">
             <div class="timeline-marker">🫶</div>
             <div class="timeline-content">
-              <h3 class="timeline-title">Today & Always</h3>
-              <p class="timeline-text">
+              <h3 class="timeline-title" data-en="Today & Always" data-ta="இன்று மற்றும் எப்போதும்">Today & Always</h3>
+              <p class="timeline-text" data-en="Here we are, celebrating this special day and all the love we share. But this isn't the end of our story—it's just another beautiful chapter. I promise to love you more with each passing day." data-ta="இதோ நாம், இந்த சிறப்பு நாளையும் நாம் பகிர்ந்து கொள்ளும் அனைத்து அன்பையும் கொண்டாடுகிறோம். ஆனால் இது நம் கதையின் முடிவு அல்ல—இது மற்றொரு அழகான அத்தியாயம். ஒவ்வொரு நாளும் உங்களை மேலும் மேலும் நேசிப்பேன் என்று உறுதியளிக்கிறேன்.">
                 Here we are, celebrating this special day and all the love we share. But this isn't the end of our
                 story—it's just another beautiful chapter. I promise to love you more with each passing day.
               </p>
@@ -1091,36 +1095,36 @@
 
       <!-- My Promises to You -->
       <div class="promises-section">
-        <h2 class="section-title">My Promises to You</h2>
+        <h2 class="section-title" data-en="My Promises to You" data-ta="உங்களுக்கான என் வாக்குறுதிகள்">My Promises to You</h2>
         <div class="promises-grid">
           <div class="promise-card">
             <div class="promise-icon">🤝</div>
-            <p class="promise-text">I promise to always be your safe place, where you can be yourself without fear or
+            <p class="promise-text" data-en="I promise to always be your safe place, where you can be yourself without fear or judgment, today and every day." data-ta="நீங்கள் பயம் அல்லது தீர்ப்பு இல்லாமல் நீங்களாக இருக்கக்கூடிய உங்கள் பாதுகாப்பான இடமாக நான் எப்போதும் இருப்பேன் என்று உறுதியளிக்கிறேன், இன்று மற்றும் ஒவ்வொரு நாளும்.">I promise to always be your safe place, where you can be yourself without fear or
               judgment, today and every day.</p>
           </div>
           <div class="promise-card">
             <div class="promise-icon">🌟</div>
-            <p class="promise-text">I promise to support your dreams and celebrate every victory, big or small, along
+            <p class="promise-text" data-en="I promise to support your dreams and celebrate every victory, big or small, along the way of our journey together." data-ta="நம் பயணத்தில் பெரிய அல்லது சிறிய ஒவ்வொரு வெற்றியையும் கொண்டாடவும், உங்கள் கனவுகளை ஆதரிக்கவும் உறுதியளிக்கிறேன்.">I promise to support your dreams and celebrate every victory, big or small, along
               the way of our journey together.</p>
           </div>
           <div class="promise-card">
             <div class="promise-icon">😊</div>
-            <p class="promise-text">I promise to make you laugh and smile, especially on days when it feels impossible,
+            <p class="promise-text" data-en="I promise to make you laugh and smile, especially on days when it feels impossible, bringing light to your darkest moments." data-ta="குறிப்பாக சாத்தியமற்றதாக தோன்றும் நாட்களில், உங்கள் இருண்ட தருணங்களுக்கு வெளிச்சம் கொண்டுவருவதன் மூலம், உங்களை சிரிக்க வைக்கவும் புன்னகைக்க வைக்கவும் உறுதியளிக்கிறேன்.">I promise to make you laugh and smile, especially on days when it feels impossible,
               bringing light to your darkest moments.</p>
           </div>
           <div class="promise-card">
             <div class="promise-icon">💪</div>
-            <p class="promise-text">I promise to stand by you through every storm and dance with you in every sunshine,
+            <p class="promise-text" data-en="I promise to stand by you through every storm and dance with you in every sunshine, never leaving your side." data-ta="ஒவ்வொரு புயலிலும் உங்கள் பக்கத்தில் நின்று, ஒவ்வொரு சூரிய ஒளியிலும் உங்களுடன் நடனமாடுவேன், ஒருபோதும் உங்கள் பக்கத்தை விட்டு விலகமாட்டேன் என்று உறுதியளிக்கிறேன்.">I promise to stand by you through every storm and dance with you in every sunshine,
               never leaving your side.</p>
           </div>
           <div class="promise-card">
             <div class="promise-icon">💭</div>
-            <p class="promise-text">I promise to listen with my whole heart and understand not just your words, but your
+            <p class="promise-text" data-en="I promise to listen with my whole heart and understand not just your words, but your feelings and dreams too." data-ta="என் முழு இதயத்துடன் கேட்கவும், உங்கள் வார்த்தைகளை மட்டுமல்ல, உங்கள் உணர்வுகள் மற்றும் கனவுகளையும் புரிந்து கொள்ள உறுதியளிக்கிறேன்.">I promise to listen with my whole heart and understand not just your words, but your
               feelings and dreams too.</p>
           </div>
           <div class="promise-card">
             <div class="promise-icon">🌹</div>
-            <p class="promise-text">I promise to never stop choosing you, loving you, and showing you how incredibly
+            <p class="promise-text" data-en="I promise to never stop choosing you, loving you, and showing you how incredibly much you mean to me every single day." data-ta="ஒவ்வொரு நாளும் உங்களை தேர்ந்தெடுப்பதையும், உங்களை நேசிப்பதையும், நீங்கள் எனக்கு எவ்வளவு அர்த்தமுள்ளவர் என்பதை காண்பிப்பதையும் நிறுத்த மாட்டேன் என்று உறுதியளிக்கிறேன்.">I promise to never stop choosing you, loving you, and showing you how incredibly
               much you mean to me every single day.</p>
           </div>
         </div>
@@ -1136,8 +1140,8 @@
         <span class="footer-heart">💕</span>
         <span class="footer-heart">💘</span>
       </div>
-      <h3 class="footer-title">Forever Together</h3>
-      <p class="footer-message">
+      <h3 class="footer-title" data-en="Forever Together" data-ta="என்றென்றும் ஒன்றாக">Forever Together</h3>
+      <p class="footer-message" data-en="Every love story is beautiful, but ours is my favorite" data-ta="ஒவ்வொரு காதல் கதையும் அழகானது, ஆனால் நம்முடையது என் விருப்பம்">
         Every love story is beautiful, but ours is my favorite
       </p>
       <div class="footer-divider">
@@ -1145,16 +1149,16 @@
         <span class="divider-heart">💝</span>
         <span class="divider-line"></span>
       </div>
-      <p class="footer-quote">
+      <p class="footer-quote" data-en="You are my today and all of my tomorrows. You are my dream come true, my best friend, my soulmate." data-ta="நீங்கள் என் இன்றும் என் அனைத்து நாளைகளும். நீங்கள் என் கனவு நனவாகி, என் சிறந்த நண்பர், என் ஆன்மா துணை.">
         "You are my today and all of my tomorrows.<br>
         You are my dream come true, my best friend, my soulmate."
       </p>
-      <p class="footer-names">💝UsMan 💘 SaiDhuMa💝</p>
+      <p class="footer-names" data-en="💝UsMan 💘 SaiDhuMa💝" data-ta="💝உஸ்மான் 💘 சைதுமா💝">💝UsMan 💘 SaiDhuMa💝</p>
       <div class="footer-date">
-        <p class="special-date">💖 Valentine's Day 2026 💖</p>
+        <p class="special-date" data-en="💖 Valentine's Day 2026 💖" data-ta="💖 காதலர் தினம் 2026 💖">💖 Valentine's Day 2026 💖</p>
       </div>
       <div class="footer-bottom">
-        <p>Made with endless love and devotion For My Beautiful SaiDhuMa 💖 From UsMan</p>
+        <p data-en="Made with endless love and devotion For My Beautiful SaiDhuMa 💖 From UsMan" data-ta="என் அழகான சைதுமாவுக்காக முடிவில்லாத அன்புடனும் பக்தியுடனும் செய்யப்பட்டது 💖 உஸ்மானிடமிருந்து">Made with endless love and devotion For My Beautiful SaiDhuMa 💖 From UsMan</p>
       </div>
     </div>
     <div class="footer-sparkles">
@@ -1168,6 +1172,8 @@
 
 
   <script>
+    let currentLang = 'en';
+
     // Create floating hearts
     function createHearts() {
       const container = document.getElementById('heartsContainer');
@@ -1182,6 +1188,48 @@
         heart.style.fontSize = (Math.random() * 15 + 18) + 'px';
         container.appendChild(heart);
       }
+    }
+
+    // Toggle Language
+    function toggleLanguage() {
+      const body = document.body;
+      const langBtn = document.getElementById('langText');
+      
+      if (currentLang === 'en') {
+        currentLang = 'ta';
+        body.classList.add('tamil');
+        langBtn.textContent = 'English';
+        translateToTamil();
+      } else {
+        currentLang = 'en';
+        body.classList.remove('tamil');
+        langBtn.textContent = 'தமிழ்';
+        translateToEnglish();
+      }
+    }
+
+    function translateToTamil() {
+      const elements = document.querySelectorAll('[data-ta]');
+      elements.forEach(el => {
+        const tamilText = el.getAttribute('data-ta');
+        if (el.innerHTML.includes('<br>')) {
+          el.innerHTML = tamilText;
+        } else {
+          el.textContent = tamilText;
+        }
+      });
+    }
+
+    function translateToEnglish() {
+      const elements = document.querySelectorAll('[data-en]');
+      elements.forEach(el => {
+        const englishText = el.getAttribute('data-en');
+        if (el.innerHTML.includes('<br>')) {
+          el.innerHTML = englishText;
+        } else {
+          el.textContent = englishText;
+        }
+      });
     }
 
     // Reveal main content
